@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar align=center>
+    <ion-title>Add New Product</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="doClose()">
+          <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding no-bounce>
+
+    <ion-list>
+      <form [formGroup]="verifyData">
+          <ion-item>
+            <ion-label floating>Product Type</ion-label>
+            <ion-select formControlName="type" [(ngModel)]="product.productType">
+                <ion-option *ngFor="let product of productTypes" value={{product.productType}}>{{product.productType}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="showError">
+            <p> Product Type Already Registered </p>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Product Brand</ion-label>
+            <ion-input formControlName="brand" type="text" [(ngModel)]="product.productBrand" (ngModelChange)="product.productBrand=$event.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Product Model</ion-label>
+            <ion-input formControlName="model" type="text" [(ngModel)]="product.productModel" (ngModelChange)="product.productModel=$event.toUpperCase()"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Product Make Year</ion-label>
+            <ion-datetime displayFormat="YYYY" pickerFormat="YYYY" min="2010" formControlName="purchaseDate" formControlName="makeYear" type="number" [(ngModel)]="product.productMakeYear"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Product Purchase Date</ion-label>
+            <ion-datetime displayFormat="MMMM/YYYY" pickerFormat="MMMM YYYY" min="2010" formControlName="purchaseDate" [(ngModel)]="product.productPurchaseDate"></ion-datetime>
+          </ion-item>
+        </form>   
+   </ion-list>
+
+        <button ion-button full (click)="doSave()" [disabled]="!verifyData.valid">Save</button>
+
+</ion-content>

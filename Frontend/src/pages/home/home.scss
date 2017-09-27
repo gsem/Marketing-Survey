@@ -1,0 +1,75 @@
+page-home { 
+    //.ion-md-mail:before {
+        //content: url('../assets/model-s.png');
+        //font-size: 90px;
+ //   } 
+        .scroll-content {
+            overflow-y: hidden;
+         }
+        
+    .background-image {
+        //background: url('../assets/frontimage2.png') no-repeat center center fixed;
+        background-color: rgb(31, 143, 131);
+         background-size: cover;
+        //display: block;
+        filter: blur(1px);
+        -webkit-filter: blur(2px);
+        height: 800px;
+        left: 0;
+        top: 0;
+        position: fixed;
+        right: 0;
+        z-index: 1;
+      }
+      
+    #content {
+        margin-top: 150px;
+        left: 0;
+        align-self: auto;
+        position: fixed;
+        right: 0;
+        z-index: 2;
+        padding: 0 10px;
+        background-color: rgba(0, 0, 0, 0.20);
+
+        .item-content {
+            background-color:rgba(255, 255, 255, 0.25);
+          }
+
+     .transparentIonItem{
+
+        background-color: transparent;
+     }
+     .input-display{
+
+        border:1px solid rgba(255, 255, 255, 0.6); 
+        border-radius: 15px;
+        margin-top: 20px;
+        color: #ebedef;
+        ::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.6)
+        }
+        background-color: rgba(6, 1, 1, 0.2);
+
+     }
+
+         .invalid-display{
+    
+            font-size: 13px;
+            color:#971C1C;
+            margin-left: 15px;
+            margin-top: 5px;
+         }
+
+
+     }
+   
+     .button-display{
+
+        background-color: rgba(6, 1, 1, 0.2);  
+        border-radius: 15px;
+
+     }
+
+    
+}

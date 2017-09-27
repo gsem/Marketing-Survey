@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar align="center">
+    <ion-title>Survey Questionaire</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="active">
+  <!--
+    <ion-list *ngIf="show" text-wrap>
+    <ion-col *ngFor="let question of data.question; let i = index;">
+        <ion-list radio-group [(ngModel)]="answer[i]">
+          <ion-list-header>
+          {{question.question}}
+          </ion-list-header>
+            <ion-item *ngFor="let response of question.response">
+              <ion-label>{{response.response}}</ion-label>
+              <ion-radio value={{response.value}}></ion-radio>
+            </ion-item>
+        </ion-list>
+    </ion-col>
+    </ion-list>
+    -->
+    <ion-card>
+        <ion-card-header (ngModel)="displayedQuestion" text-wrap lines> {{displayedQuestion}} </ion-card-header>
+        <ion-list radio-group [(ngModel)]="currentResponse">
+              <ion-item *ngFor="let response of displayedOptions">
+                <ion-label>{{response.response}}</ion-label>
+                <ion-radio value={{response.value}}></ion-radio>
+              </ion-item>
+          </ion-list>
+    </ion-card>
+    <button ion-button full (click)="doSave()" padding>Save</button>
+    </ion-content>
+    <ion-content *ngIf="!active">
+      <h2>
+     SURVEY NOT ACTIVE YET
+      </h2>
+    </ion-content>

@@ -1,0 +1,53 @@
+page-user {
+
+    .toolbar-background{
+        background-color: rgb(31, 143, 131);
+    }
+
+    .accordion-list {
+        background: #FFFFFF;
+           
+    }
+    .section {
+        background: #FFFFFF;
+        color: #000;
+        margin-bottom: 4px;
+        font-size: 20px;
+    }
+    .section-active {
+        background: rgba(31, 143, 131, 0.33);
+        color: #000000;
+        font-size: 20px;
+    }
+ 
+    .child {
+        color: #000;
+        padding: 0px;
+        margin-top: 20px;
+        margin-bottom: 4px;
+        -webkit-animation: slideInBothWays linear 1; 
+        animation: slideInBothWays linear 1;
+        //-webkit-animation-fill-mode: forwards;
+       // animation-fill-mode: forwards;
+        -webkit-animation-duration: 400ms;
+        animation-duration: 400ms;
+    }
+
+    @-webkit-keyframes slideInBothWays {
+        0% {
+          -webkit-transform: translate3d(0,-30%,0);
+        }  
+        100% {
+          -webkit-transform: translate3d(0,0,0);
+        }
+      }
+    .child-item {
+        background: #f3f2f1;
+        margin-top: 200px;
+        padding: 10px;
+    }
+    .label {
+        margin: 0px;
+    }
+
+}

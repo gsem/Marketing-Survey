@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar hideBackButton align="center">
+    <ion-title>Welcome</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list *ngIf="show" class="accordion-list">
+<ion-list-header *ngFor="let product of data.product; let i=index" no-lines no-padding>
+    <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': product.open, 'section': !product.open}">
+        <ion-icon item-left name="arrow-forward" *ngIf="!product.open"></ion-icon>
+        <ion-icon item-left name="arrow-down" *ngIf="product.open"></ion-icon>
+          {{ product.productType }}
+      </button>
+ <!-- <button ion-item (click)="doProductEnquiry(product.productType,product._id)">
+  <h1>{{product.productType}}</h1>
+  </button>
+  <ion-item-options side="right">
+  <button ion-button color="primary" (click)="getProductInfo(product.productType,product.productBrand,product.productModel,product.productPurchaseDate)">
+   INFO
+  </button>
+  </ion-item-options>-->
+  <ion-item *ngIf="product.open" text-wrap class="child">
+    <h2 align="center"> Product Brand : {{product.productBrand}} <br\> Product Model : {{product.productModel}} </h2>
+     <ion-row text-align="center">
+       <ion-col text-center>
+     <button ion-button outline item-end (click)="doProductEnquiry(product.productType,product._id,product.productBrand,product.productModel)">Report Issue</button>
+       </ion-col>
+      <ion-col text-center>
+     <button ion-button outline item-end (click)="getQuestions(product.productType,product._id,product.count,product.active)">Take Survey</button>
+      </ion-col>
+     </ion-row>
+  </ion-item>
+</ion-list-header>
+</ion-list>
+<ion-fab right bottom>
+  <button ion-fab color="danger" (click)="doRegisterProduct()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+</ion-content>

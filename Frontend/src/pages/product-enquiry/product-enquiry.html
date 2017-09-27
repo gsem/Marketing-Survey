@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Product Enquiry</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+<ion-card-header (ngModel)="product" text-wrap> Do you want to report any incident with your current {{product.productType}} ( {{product.productBrand}} : {{product.productModel}} ) ? </ion-card-header>
+
+<ion-list radio-group [(ngModel)]="response">
+    <ion-item>
+        <ion-label>Yes</ion-label>
+        <ion-radio value="true"></ion-radio>
+      </ion-item>
+      <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio value="false"></ion-radio>
+        </ion-item>
+</ion-list>
+  </ion-card>
+</ion-content>
+<ion-footer no-shadow id="footer">
+    <ion-navbar>
+    <ion-toolbar position="bottom">
+        <button ion-button full color="primary" (click)="continue()">Continue</button>
+    </ion-toolbar>
+  </ion-navbar>
+  </ion-footer>

@@ -1,0 +1,29 @@
+<ion-content padding>
+    <div class="background-image"></div>
+    <ion-card id="content">
+    <ion-list class="marginTop">
+      <ion-item class="input-display">
+       <ion-label stacked style="color: #ebedef; margin-left:10px;"><ion-icon name="mail"></ion-icon></ion-label>
+       <ion-input type="email" [(ngModel)]="user.email" placeholder="Email"></ion-input>
+      </ion-item>
+      <p class="invalid-display" *ngIf="invalidEmail"> Email Not Registered </p>
+      <ion-item class="input-display">
+       <ion-label stacked style="color: #ebedef; margin-left:10px;"><ion-icon name="lock"></ion-icon></ion-label>
+       <ion-input type="password" [(ngModel)]="user.password" placeholder="Password" ></ion-input>
+      </ion-item>
+      <p  class="invalid-display" *ngIf="invalidPassword"> Invalid Password : Please Re-Enter </p>
+  </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+    <button ion-button (click)="doLogin()" class="button-display">Login</button>
+        </ion-col>
+        <ion-col text-center>
+    <button ion-button (click)="doSignUp()" class="button-display">SignUp</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+        
+    </ion-card>
+
+</ion-content>

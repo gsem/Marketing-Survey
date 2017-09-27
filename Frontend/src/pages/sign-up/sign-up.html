@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create New Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <form [formGroup]="verifyData">
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input formControlName="name" type="email" [(ngModel)]="user.name"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input formControlName="email" type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="showError">
+        <p> Email Already Registered </p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input formControlName="password" type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input formControlName="phone" type="number" [(ngModel)]="user.phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input formControlName="address" type="text" [(ngModel)]="user.address"></ion-input>
+      </ion-item>
+    
+    </form>
+    </ion-list>
+    <button ion-button full color="primary" (click)="doSignUp()" [disabled]="!verifyData.valid">SignUp</button>
+</ion-content>

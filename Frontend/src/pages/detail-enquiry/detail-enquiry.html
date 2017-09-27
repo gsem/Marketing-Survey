@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar align="center">
+    <ion-title>Product Issue</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+  <ion-card text-wrap>
+      <ion-card-header>
+        Comment your issue
+      </ion-card-header>
+      <ion-item>
+    <ion-textarea type="text"></ion-textarea>
+      </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Please rate the severity of the issue
+      <ion-badge item-end color="danger" class = "badge">{{saturation}}</ion-badge>
+    </ion-card-header>
+    <ion-item>
+        <ion-range min="1" max="5" pin="true" [(ngModel)]="saturation" color="danger">
+            <ion-label range-left>Normal</ion-label>
+            <ion-label range-right>Very Severe</ion-label>
+          </ion-range>
+      </ion-item>
+  </ion-card>
+</ion-content>
+
+<ion-footer no-shadow>
+    <ion-toolbar position="bottom">
+        <button ion-button full color="primary" (click)="continue()">Continue with Survey</button>
+    </ion-toolbar>
+  </ion-footer>
